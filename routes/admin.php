@@ -13,5 +13,5 @@ use App\Http\Controllers\Admin\HomeController;
 |
 */
 
-Route::get("/", [HomeController::class, "index"]);
+Route::get("/admin/cpanel", [HomeController::class, "index"])->name("cpanel");
  

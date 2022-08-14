@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\LoginController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,9 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('auth.login');
-});
+Route::get('/', [LoginController::class, "index"]);
+
+Route::get('/dashboard', [LoginController::class, "dashboard"]);
+
+
+Route::post("/logueo", [LoginController::class, "logueo"])->name("login"); 
+
 
 Route::middleware([
     'auth:sanctum',
