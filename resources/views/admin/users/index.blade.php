@@ -3,11 +3,11 @@
 @section('title', 'Login-Roles')
 
 @section('content_header')
-    <h1>PRUEBA DE RESTRICCIONES</h1>
+    <h1>Lista de usuarios</h1>
 @stop
 
 @section('content')
-    <p>Welcome to this beautiful admin panel.</p>
+    @livewire('admin.index-user')
 @stop
 
 @section('css')
@@ -15,5 +15,6 @@
 @stop
 
 @section('js')
+    @livewireScripts
     <script> console.log('Hi!'); </script>
 @stop

@@ -18,7 +18,7 @@ Route::get('/', [LoginController::class, "index"]);
 Route::get('/dashboard', [LoginController::class, "dashboard"]);
 
 
-Route::post("/logueo", [LoginController::class, "logueo"])->name("login"); 
+Route::POST("/logueo", [LoginController::class, "logueo"])->name("logueo");
 
 
 Route::middleware([

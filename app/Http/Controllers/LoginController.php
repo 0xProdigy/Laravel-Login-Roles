@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Auth; 
 
 class LoginController extends Controller
 {
@@ -21,9 +21,9 @@ class LoginController extends Controller
     {
         if (Auth::attempt($creds->only(['email', 'password']))) {
             request()->session()->regenerate();
-            return redirect("dashboard");
-        } else {
-            $this->index();
+            return redirect("dashboard"); 
+        } else { 
+            return view("auth.login");
         }
     }
 }

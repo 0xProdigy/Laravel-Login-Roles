@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\HomeController;
+use App\Http\Controllers\Admin\UserController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,5 +15,6 @@ use App\Http\Controllers\Admin\HomeController;
 |
 */
 
-Route::get("/admin/cpanel", [HomeController::class, "index"])->name("cpanel");
+Route::get("", [HomeController::class, "index"])->name("admin.home");
  
+Route::resource("users", UserController::class)->names("admin.users");
